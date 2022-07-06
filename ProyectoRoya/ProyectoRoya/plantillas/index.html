@@ -1,0 +1,34 @@
+<html>
+    <body>
+        <h2>Hola, Bienvenido al index</h2>
+
+        {% if nombre_persona == 'Juan' %}
+
+        <p>El curso lo imparte el profesor Titular</p>
+
+        {% else %}
+
+        <p>El curso es dado por el profesor suplente</p>
+
+        {% endif %}
+
+
+        <p>El nombre del profesor es: {{nombre_persona|upper}}</p>
+        <p>Siendo hoy {{fecha_actual.day}} / {{fecha_actual.month}} / {{fecha_actual.year}}</p>
+        <p><strong>Temas del Curso</strong></p>
+        <p>
+            <ul>
+            {% if temas%}
+                {% for elTema in temas %}
+
+                    <li>{{elTema}}</li>
+
+                {% endfor %}
+            {% else %}
+                <p>No hay elementos que mostrar</p>
+            {% endif %}
+            </ul>
+        </p>
+
+    </body>
+</html>

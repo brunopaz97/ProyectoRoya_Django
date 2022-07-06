@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Ingreso de Datos del Gestor de Campo</title>
+
+
+    <!--Open Sans Font [ OPTIONAL ]-->
+    {% load static %}
+    <link href="{% static 'css\googleapis.css' %}" rel='stylesheet' type='text/css'>
+
+
+    <!--Bootstrap Stylesheet [ REQUIRED ]-->
+    <link href="{% static 'css\bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!--Nifty Stylesheet [ REQUIRED ]-->
+    <link href="{% static 'css\nifty.min.css' %}" rel="stylesheet">
+
+
+    <!--Nifty Premium Icon [ DEMONSTRATION ]-->
+    <link href="{% static 'css\demo\nifty-demo-icons.min.css' %}" rel="stylesheet">
+
+
+    <!--=================================================-->
+
+
+
+    <!--Pace - Page Load Progress Par [OPTIONAL]-->
+    <link href="{% static 'plugins\pace\pace.min.css' %}" rel="stylesheet">
+    <script src="{% static 'plugins\pace\pace.min.js' %}"></script>
+
+
+    <!--Demo [ DEMONSTRATION ]-->
+    <link href="{% static 'css\demo\nifty-demo.min.css' %}" rel="stylesheet">
+
+
+        
+</head>
+
+<body>
+    <div id="container" class="effect aside-float aside-bright mainnav-lg">
+        
+        <!--NAVBAR-->
+        <!--===================================================-->
+        <header id="navbar">
+            <div id="navbar-container" class="boxed">
+
+                <!--Logo y Nombre-->
+                <!--================================-->
+                <div class="navbar-header">
+                    <a href="index.html" class="navbar-brand">
+                        <img src="{% static 'img\logoproyec.JPG' %}" alt="Nifty Logo"  width="220" height="59">
+                        
+                    </a>
+                </div>
+                <!--================================-->
+                <!--Fin Logo y Nombre-->
+
+
+                <!--Navegación-->
+                <!--================================-->
+                <div class="navbar-content">
+                    <ul class="nav navbar-top-links">
+
+                        <!--Botón de Navegación-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li class="tgl-menu-btn">
+                            <a class="mainnav-toggle" href="#">
+                                <i class="demo-pli-list-view"></i>
+                            </a>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--Fin Botón de Navegación-->
+
+
+                    </ul>
+                    <ul class="nav navbar-top-links">
+
+                        <!--Menu de Usuario-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li id="dropdown-user" class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
+                                <span class="ic-user pull-right">
+                                    <i class="demo-pli-home"></i>
+                                </span>
+                            </a>
+
+
+                            <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right panel-default">
+                                <ul class="head-list">
+                                    <li>
+                                        <a href="#"><i class="demo-pli-male icon-lg icon-fw"></i> Perfil</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#"><i class="demo-pli-gear icon-lg icon-fw"></i> Ajustes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="demo-pli-unlock icon-lg icon-fw"></i> Cerrar Sesión</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--Fin Menu de Usuario-->
+                    </ul>
+                </div>
+                <!--================================-->
+                <!--Fin Navegacion-->
+
+            </div>
+        </header>
+        <!--===================================================-->
+        <!--END NAVBAR-->
+
+        <div class="boxed">
+
+            <!--CONTENT CONTAINER-->
+            <!--===================================================-->
+            <div id="content-container">
+                <div id="page-head">
+                    
+                    <div id="page-title">
+                        <h2 class="text-main"><p style="text-align: center">INGRESO DE DATOS DEL GESTOR DE CAMPO</h2>
+                    </div>
+                    
+
+                </div>
+
+                        
+                <!--Page content-->
+                <!--===================================================-->
+                <div id="page-content">
+                    
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-12">
+                    
+                            <div class="panel">
+
+                            <!---Desde Aqui---->
+                    
+                            <div class="col-lg-12">
+                            <div class="panel">
+                    
+                                <!-- Classic Form Wizard -->
+                                <!--===================================================-->
+                                <div id="demo-cls-wz">
+                    
+                                    <!--Nav-->
+                                    <ul class="wz-nav-off wz-icon-inline">
+                                        <li class="col-xs-3 bg-info">
+                                            <a data-toggle="tab" href="#demo-cls-tab1">
+                                                <span style="font-size: 15px;">
+                                                <span class="icon-wrap icon-wrap-xs"><i class="demo-pli-information icon-lg"></i></span>Datos Iniciales del Lugar y del Productor
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="col-xs-3 bg-danger">
+                                            <a data-toggle="tab" href="#demo-cls-tab2">
+                                                <span style="font-size: 15px;">
+                                                <span class="icon-wrap icon-wrap-xs"><i class="demo-pli-pen-5 icon-lg"></i></span> Propiedades y Gestión de Cultivos
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="col-xs-3 bg-success">
+                                            <a data-toggle="tab" href="#demo-cls-tab3">
+                                                <span style="font-size: 15px;">
+                                                <span class="icon-wrap icon-wrap-xs"><i class="demo-pli-receipt-4 icon-lg"></i></span> Propiedades de la Fertilidad del Suelo
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="col-xs-3 bg-dark">
+                                            <a data-toggle="tab" href="#demo-cls-tab4">
+                                                <span style="font-size: 15px;">
+                                                <span class="icon-wrap icon-wrap-xs"><i class="demo-pli-bar-chart icon-lg"></i></span> Resumen de Datos Ingresados
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                    
+                                    <!--Progress bar-->
+                                    <div class="progress progress-xs progress-striped active">
+                                        <div class="progress-bar progress-bar-dark"></div>
+                                    </div>
+                    
+                    
+                                    <!--Form-->
+                                    <form class="form-horizontal mar-top">
+                                        <div class="panel-body">
+                                            <div class="tab-content">
+                    
+                                                <!--Primera pestaña-->
+                                                <div id="demo-cls-tab1" class="tab-pane active in col-lg-12">
+                                                <div id="demo-cls-tab1" class="tab-pane active in col-lg-7">
+                                                    <br><br>
+                                                    <span style="font-size: 17px;">
+                                                    <div class="form-group">
+                                                        <label class="col-lg-3 control-label">Cód. de Parcela</label>
+                                                        <div class="col-lg-5">
+                                                            <input type="text" class="form-control" name="id_predio" placeholder="Ingrese código de Parcela" data-bv-field="id_predio" required>
+                                                        </div>
+                                                        <div class="col-lg-3">
+                                                            <a class="btn btn-sm btn-default btn-hover-success demo-psi-pen-5 add-tooltip" href="#" data-original-title="Buscar" data-container="body"></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-lg-3 control-label">Nombre del Predio</label>
+                                                        <div class="col-lg-7">
+                                                            <input type="text" class="form-control" name="nom_predio" data-bv-field="nom_predio" disabled>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-lg-3 control-label">Área evaluada del café</label>
+                                                        <div class="col-lg-4">
+                                                            <input type="number" class="form-control" name="area_eval_predio" data-bv-field="area_eval_predio" disabled>
+                                                        </div>
+                                                        <label class="col-lg-3">m<sup>2</sup> &nbsp; &nbsp;(metros cuadrados)</label>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-lg-3 control-label">Variedad de Café</label>
+                                                            <div class="radio col-lg-7" >
+                        
+                                                                <input id="demo-inline-form-radio-2" class="magic-radio" type="radio" name="variedad_cafe" checked="" disabled>
+                                                                <label for="demo-inline-form-radio-2">Bourbón</label>
+                                    
+                                                                <input id="demo-inline-form-radio-3" class="magic-radio" type="radio" name="variedad_cafe" disabled>
+                                                                <label for="demo-inline-form-radio-3">Catuai</label>
+    
+                                                                <input id="demo-inline-form-radio-4" class="magic-radio" type="radio" name="variedad_cafe" disabled>
+                                                                <label for="demo-inline-form-radio-4">Caturra</label>
+    
+                                                                <input id="demo-inline-form-radio-5" class="magic-radio" type="radio" name="variedad_cafe" disabled>
+                                                                <label for="demo-inline-form-radio-5">Pache</label>
+    
+                                                                <input id="demo-inline-form-radio-6" class="magic-radio" type="radio" name="variedad_cafe" disabled>
+                                                                <label for="demo-inline-form-radio-6">Catimor</label>
+    
+                                                            </div>
+                                                        </div>
+                                                    <div class="form-group">
+                                                        <label class="col-lg-3 control-label">Nombres del Productor</label>
+                                                        <div class="col-lg-7">
+                                                            <input type="text" class="form-control" name="nom_productor" data-bv-field="nom_productor" disabled>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-lg-3 control-label">Apellidos del Productor</label>
+                                                        <div class="col-lg-7">
+                                                            <input type="text" class="form-control" name="apel_productor" data-bv-field="apel_productor" disabled>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-lg-3 control-label">Tipo de Documento</label>
+                                                        <div class="col-lg-7">
+                                                        <div class="radio col-lg-5">
+                    
+                                                            <input id="demo-inline-form-radio" class="magic-radio" type="radio" name="tipo_doc_productor" checked="" disabled>
+                                                            <label for="demo-inline-form-radio">D.N.I.</label>
+                                
+                                                            <input id="demo-inline-form-radio-1" class="magic-radio" type="radio" name="tipo_doc_productor" disabled>
+                                                            <label for="demo-inline-form-radio-1">C.E.</label>
+                                
+                                                        </div>
+                                                        <div class="col-lg-7">
+                                                            <input type="number" class="form-control" name="nro_doc_productor" data-bv-field="nro_doc_productor" disabled>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    <br><br>
+                                                    <div class="col-sm-12">
+					
+                                                        <!--Warning Panel-->
+                                                        <!--===================================================-->
+                                                        <div class="panel panel-warning">
+                                                            <div class="panel-heading">
+                                                                <h3 class="panel-title">Atención</h3>
+                                                            </div>
+                                                            <div class="panel-body">
+                                                                <p>Si algunos de los datos que se observan son incorrectos, comunicarse con un administrador.</p>
+                                                            </div>
+                                                        </div>
+                                                        <!--===================================================-->
+                                                        <!--End Warning Panel-->
+                                                
+                                                    </div>
+
+                                                    </span>
+                                                </div>
+                                                
+                                                
+                                                <div id="demo-cls-tab1" class="tab-pane active in col-lg-5">
+                                                    <br><br>
+                                                    <form class="form-horizontal mar-top">
+                                                        <span style="font-size: 17px;">
+                                                        <label for="date" class="col-form-label"> Elegir fecha </label>
+                                                        <div class="row justify-content-center">
+                                                            <div class="col-lg-6 col-sm-6">
+                                                                <label for="startDate"></label>
+                                                                <input id="startDate" class="form-control" name="fecha_eval" type="date" />
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                    </span>
+                                                </div>
+                    
+                                                <!--Second tab-->
+                                                <div id="demo-cls-tab2" class="tab-pane fade">
+                                                    <span style="font-size: 17px;">
+                                                <div class="form-group">
+                                                    <label class="col-lg-3 control-label">Densidad de plantas por hectárea</label>
+                                                    <div class="col-lg-4">
+                                                        <input type="number" placeholder="Ingrese densidad de plantas por hectárea" class="form-control" name="plantasxhectarea" data-bv-field="plantasxhectarea">
+                                                    </div>
+                                                    <label class="col-lg-3">árboles/m<sup>2</sup> &nbsp; &nbsp; (metros cuadrados)</label>
+                                                </div>
+
+                                                <div class="form-group">
+                                                        <label class="col-lg-3 control-label">Distancia entre surcos</label>
+                                                        <div class="col-lg-4">
+                                                            <input type="number" placeholder="Ingresar separación entre surcos" class="form-control" name="distancia_surcos" data-bv-field="distancia_surcos">
+                                                        </div>
+                                                        <label class="col-lg-3">m &nbsp; &nbsp; (metros)</label>            
+                                                </div>
+
+                                                <div class="form-group">
+                                                        <label class="col-lg-3 control-label">Distancia entre plantas</label>
+                                                        <div class="col-lg-4">
+                                                            <input type="number" placeholder="Ingresar distancia entre plantas" class="form-control" name="distancia_plantas" data-bv-field="distancia_plantas">
+                                                        </div>
+                                                        <label class="col-lg-3">m &nbsp; &nbsp; (metros)</label>
+                                                </div>
+
+                                                    <div class="form-group has-feedback">
+                                                        <label class="col-lg-3 control-label">Edad del cultivo</label>
+                                                        <div class="col-lg-4">
+                                                            <input type="number" placeholder="Ingrese edad del cultivo" name="edad_cultivo" class="form-control" data-bv-field="edad_cultivo"><i class="form-control-feedback" data-bv-icon-for="firstName" style="display: none;"></i>
+                                                        </div>
+                                                        <label class="col-lg-3">años</label>
+
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="col-lg-3 control-label">Especie asociada al cultivo</label>
+                                                        <div class="col-lg-5">
+                                                        <div class="radio col-lg-4">
+                    
+                                                            <input id="demo-inline-form-radio-7" class="magic-radio" type="radio" name="tipo_esp_asociada" checked="">
+                                                            <label for="demo-inline-form-radio-7">Frutal</label>
+                                
+                                                            <input id="demo-inline-form-radio-8" class="magic-radio" type="radio" name="tipo_esp_asociada">
+                                                            <label for="demo-inline-form-radio-8">Forestal</label>
+                                
+                                                        </div>
+                                                        <div class="col-lg-5">
+                                                            <input type="text" class="form-control" name="esp_asociada" placeholder="Nombre de especie asociada" data-bv-field="esp_asociada">
+                                                        </div>
+                                                        </div>
+
+                                                    </div>
+                                                
+                                                    <div class="form-group">
+                                                        <label class="col-lg-3 control-label">Tipo de Sombra</label>
+                                                            <div class="radio col-lg-7">
+                        
+                                                                <input id="demo-inline-form-radio-9" class="magic-radio" type="radio" name="tipo_sombra" checked="">
+                                                                <label for="demo-inline-form-radio-9">Temporal</label>
+                                    
+                                                                <input id="demo-inline-form-radio-10" class="magic-radio" type="radio" name="tipo_sombra">
+                                                                <label for="demo-inline-form-radio-10">Intermedia</label>
+    
+                                                                <input id="demo-inline-form-radio-11" class="magic-radio" type="radio" name="tipo_sombra">
+                                                                <label for="demo-inline-form-radio-11">Permanente</label>                                
+                                                            </div>
+                                                    </div>
+
+                                                <div class="form-group">
+                                                        <label class="col-lg-3 control-label">Porcentaje de Sombra</label>
+                                                        <div class="col-lg-3">
+                                                            <input type="number" placeholder="Ingrese porcentaje de sombra" name="porcen_sombra" class="form-control" data-bv-field="porcen_sombra">
+                                                        </div>
+                                                        <label class="col-lg-3">%</label>
+                                                </div>
+
+                                                <div class="form-group">
+                                                        <label class="col-lg-3 control-label">Control de Roya de café en el último mes</label>
+                                                        <div class="radio col-lg-2">
+                    
+                                                            <input id="demo-inline-form-radio-12" class="magic-radio" type="radio" name="control_ult_mes" checked="">
+                                                            <label for="demo-inline-form-radio-12">Si &nbsp; &nbsp; &nbsp; &nbsp;</label>
+                                
+                                                            <input id="demo-inline-form-radio-13" class="magic-radio" type="radio" name="control_ult_mes">
+                                                            <label for="demo-inline-form-radio-13">No</label>
+                                
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <input type="text" class="form-control" name="tipo_control_ult_mes" placeholder="Tipo de control realizado" data-bv-field="tipo_control_ult_mes">
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <input type="text" class="form-control" name="produc_control_ult_mes" placeholder="Producto utilizado" data-bv-field="produc_control_ult_mes">
+                                                        </div>
+                                                </div>
+                                                    <div class="form-group">
+                                                        <label class="col-lg-3 control-label">Control de Roya de café en los últimos 3 meses</label>
+                                                        <div class="radio col-lg-2">
+                    
+                                                            <!-- Inline radio buttons -->
+                                                            <input id="demo-inline-form-radio-14" class="magic-radio" type="radio" name="control_ult_3meses" checked="">
+                                                            <label for="demo-inline-form-radio-14">Si &nbsp; &nbsp; &nbsp; &nbsp;</label>
+                                
+                                                            <input id="demo-inline-form-radio-15" class="magic-radio" type="radio" name="control_ult_3meses">
+                                                            <label for="demo-inline-form-radio-15">No</label>
+                                
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <input type="text" class="form-control" name="tipo_control_ult_3meses" placeholder="Tipo de Control" data-bv-field="tipo_control_ult_3meses">
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <input type="text" class="form-control" name="produc_control_ult_3meses" placeholder="Producto Utilizado" data-bv-field="produc_control_ult_3meses">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-lg-3 control-label">Fertilización en los últimos 4 meses</label>
+                                                        <div class="radio col-lg-2">
+                    
+                                                            <!-- Inline radio buttons -->
+                                                            <input id="demo-inline-form-radio-16" class="magic-radio" type="radio" name="fertiliza_4meses" checked="">
+                                                            <label for="demo-inline-form-radio-16">Si &nbsp; &nbsp; &nbsp; &nbsp;</label>
+                                
+                                                            <input id="demo-inline-form-radio-17" class="magic-radio" type="radio" name="fertiliza_4meses">
+                                                            <label for="demo-inline-form-radio-17">No</label>
+                                
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <input type="text" class="form-control" name="tipo_fertiliza_4meses" placeholder="Tipo de Fertilizante" data-bv-field="tipo_fertiliza_4meses">
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <input type="text" class="form-control" name="produc_fertiliza_4meses" placeholder="Producto Utilizado" data-bv-field="produc_fertiliza_4meses">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-lg-3 control-label">Producción de café en los últimos 2 meses</label>
+                                                        <div class="col-lg-3">
+                                                            <input type="number" placeholder="Ingrese cantidad de producción en kilogramos" name="produc_acum_ult_2meses" class="form-control" data-bv-field="produc_acum_ult_2meses"><i class="form-control-feedback" data-bv-icon-for="lastName" style="display: none;"></i>
+                                                        </div>
+                                                        <label class="col-lg-2">kg &nbsp; &nbsp; (kilogramos)</label>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-lg-3 control-label">Carga Fructífera</label>
+                                                        <div class="col-lg-3">
+                                                            <input type="number" placeholder="Ingrese cantidad de nudos productivos por planta" name="carga_fructifera" class="form-control" data-bv-field="carga_fructifera">
+                                                        </div>
+                                                        <label class="col-lg-3">NP &nbsp; (nudos productivos por planta)</label>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-lg-3 control-label">Acidez del agua de lluvia</label>
+                                                        <div class="col-lg-3">
+                                                            <input type="number" placeholder="Ingrese grado de acidez del agua de lluvia" name="acidez_agua_lluvia" class="form-control" data-bv-field="acidez_agua_lluvia">
+                                                        </div>
+                                                        <label class="col-lg-3">pH &nbsp; (coeficiente de grado de acidez)</label>
+                                                </div>
+
+
+
+                                                </span>
+                                                </div>
+                    
+                                                <!--Tercera pestaña-->
+                                                <div id="demo-cls-tab3" class="tab-pane">
+                                                    <span style="font-size: 17px;">
+                                                    <div id="demo-bv-tab4" class="tab-pane active in col-lg-4">
+                                                    <div class="form-group">
+                                                        <label class="col-lg-5 control-label">Grado de Acidez pH</label>
+                                                        <div class="col-lg-5">
+                                                            <input type="number" placeholder="Ingrese grado de acidez" name="grado_acidez" class="form-control" data-bv-field="grado_acidez">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-lg-5 control-label">Nitrógeno</label>
+                                                        <div class="col-lg-5">
+                                                            <input type="number" placeholder="Ingrese nivel de Nitrógeno" name="nitrogeno" class="form-control" data-bv-field="nitrogeno">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-lg-5 control-label">Arena</label>
+                                                        <div class="col-lg-5">
+                                                            <input type="number" placeholder="Ingrese nivel de Arena" name="arena" class="form-control" data-bv-field="arena">
+                                                        </div>
+                                                    </div>
+                                                    </div>
+
+                                                    <div id="demo-bv-tab4" class="tab-pane active in col-lg-4">
+                                                    <div class="form-group">
+                                                        <label class="col-lg-5 control-label">Fósforo</label>
+                                                        <div class="col-lg-5">
+                                                            <input type="number" placeholder="Ingrese nivel de Fósforo" name="fosforo" class="form-control" data-bv-field="fosforo">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-lg-5 control-label">Potasio</label>
+                                                        <div class="col-lg-5">
+                                                            <input type="number" placeholder="Ingrese nivel de Potasio" name="potasio" class="form-control" data-bv-field="potasio">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-lg-5 control-label">Limo</label>
+                                                        <div class="col-lg-5">
+                                                            <input type="number" placeholder="Ingrese nivel de Limo" name="limo" class="form-control" data-bv-field="limo">
+                                                        </div>
+                                                    </div>
+                                                    </div>
+
+                                                    <div id="demo-bv-tab4" class="tab-pane active in col-lg-4">
+                                                    <div class="form-group">
+                                                        <label class="col-lg-5 control-label">Materia Orgánica</label>
+                                                        <div class="col-lg-5">
+                                                            <input type="number" placeholder="Ingrese nivel Materia O." name="materia_organica" class="form-control" data-bv-field="materia_organica">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-lg-5 control-label">Calcio</label>
+                                                        <div class="col-lg-5">
+                                                            <input type="number" placeholder="Ingrese nivel de Calcio" name="calcio" class="form-control" data-bv-field="calcio">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-lg-5 control-label">Arcilla</label>
+                                                        <div class="col-lg-5">
+                                                            <input type="number" placeholder="Ingrese nivel de Arcilla" name="arcilla" class="form-control" data-bv-field="arcilla">
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                    </span>
+                                                </div>
+                    
+                                                <!--Cuarta pestaña-->
+                                                <div id="demo-cls-tab4" class="tab-pane mar-btm">
+
+                                                    <h3><p style="text-align: center;">Valores ingresados</h3>
+
+                                                    <div class="row">
+                                                    <span style="font-size: 17px;">
+                                                        <div class="col-lg-12 table-responsive">
+                                                            <table class="table table-bordered invoice-summary">
+                                                                <thead>
+                                                                    <tr class="bg-trans-dark">
+                                                                        <th class="text-uppercase" style="text-align: center">Descripción</th>
+                                                                        <th class="min-col text-center text-uppercase">Ingresado</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Nombres del Productor</strong>
+                                                                        </td>
+                                                                        <td class="text-center">Bruno</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Apellidos del Productor</strong>
+                                                                        </td>
+                                                                        <td class="text-center">Paz</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Documento de Identidad del Productor</strong>
+                                                                        </td>
+                                                                        <td class="text-center">78495365</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Nombre del predio</strong>
+                                                                        </td>
+                                                                        <td class="text-center">San Borja</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Codigo de lugar de producción(predio)</strong>
+                                                                        </td>
+                                                                        <td class="text-center">2705</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Área evaluada del café</strong>
+                                                                        </td>
+                                                                        <td class="text-center">1 hectárea</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Densidad de plantas por hectárea</strong>
+                                                                        </td>
+                                                                        <td class="text-center">1500 árboles/hectárea</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Separación de los surcos</strong>
+                                                                        </td>
+                                                                        <td class="text-center">20 centímetros</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Distancia entre plantas</strong>
+                                                                        </td>
+                                                                        <td class="text-center">2 metros</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Variedad de Café</strong>
+                                                                        </td>
+                                                                        <td class="text-center">Bourbón / Caturra / Pache</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Edad del cultivo</strong>
+                                                                        </td>
+                                                                        <td class="text-center">5 años</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Porcentaje de Sombra</strong>
+                                                                        </td>
+                                                                        <td class="text-center">60%</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Tipo de Sombra</strong>
+                                                                        </td>
+                                                                        <td class="text-center">Intermedia</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Control de Roya de café en el último mes</strong>
+                                                                        </td>
+                                                                        <td class="text-center">Realizado</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Control de Roya de café en los últimos 3 meses</strong>
+                                                                        </td>
+                                                                        <td class="text-center">Realizado</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Fertilización en los últimos 4 meses</strong>
+                                                                        </td>
+                                                                        <td class="text-center">Realizado</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Producción de café en los últimos 2 meses</strong>
+                                                                        </td>
+                                                                        <td class="text-center">700 kg</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Carga Fructífera</strong>
+                                                                        </td>
+                                                                        <td class="text-center">250 NP</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Acidez del agua de Lluvia</strong>
+                                                                        </td>
+                                                                        <td class="text-center">5.1 pH</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Grado de Acidez</strong>
+                                                                        </td>
+                                                                        <td class="text-center">20</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Nitrógeno</strong>
+                                                                        </td>
+                                                                        <td class="text-center">10</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Arena</strong>
+                                                                        </td>
+                                                                        <td class="text-center">15</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Fósforo</strong>
+                                                                        </td>
+                                                                        <td class="text-center">16</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Potasio</strong>
+                                                                        </td>
+                                                                        <td class="text-center">19</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Limo</strong>
+                                                                        </td>
+                                                                        <td class="text-center">22</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Materia Orgánica</strong>
+                                                                        </td>
+                                                                        <td class="text-center">23</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Calcio</strong>
+                                                                        </td>
+                                                                        <td class="text-center">25</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <strong>Arcilla</strong>
+                                                                        </td>
+                                                                        <td class="text-center">24</td>
+                                                                    </tr>
+
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </span>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                    
+                    
+                                        <!--Footer button-->
+                                        <div class="panel-footer text-center">
+                                            <div class="box-inline">
+                                                <button type="button" class="previous btn btn-info">Anterior</button>
+                                                <button type="button" class="next btn btn-mint">Siguiente</button>
+                                                <button type="button" class="finish btn btn-success" disabled="">Guardar</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!--===================================================-->
+                                <!-- End Classic Form Wizard -->
+                    
+                            </div>
+                        </div>
+                    
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+                <!--===================================================-->
+                <!--End page content-->
+
+            </div>
+            <!--===================================================-->
+            <!--END CONTENT CONTAINER-->
+
+
+            {% include "menu.html" %}
+            
+            <!--===================================================-->
+            <!--END MAIN NAVIGATION-->
+
+        </div>
+
+        
+
+        <!-- FOOTER -->
+        <!--===================================================-->
+        <footer id="footer">
+
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+            <p class="pad-lft">&#0169; INICTEL-UNI & UNJ 2022</p>
+
+
+
+        </footer>
+        <!--===================================================-->
+        <!-- END FOOTER -->
+
+
+        <!-- SCROLL PAGE BUTTON -->
+        <!--===================================================-->
+        <button class="scroll-top btn">
+            <i class="pci-chevron chevron-up"></i>
+        </button>
+        <!--===================================================-->
+    </div>
+    <!--===================================================-->
+    <!-- END OF CONTAINER -->
+
+
+    
+    
+    
+    <!--JAVASCRIPT-->
+    <!--=================================================-->
+
+    <!--jQuery [ REQUIRED ]-->
+    <script src="{% static 'js\jquery.min.js' %}"></script>
+
+
+    <!--BootstrapJS [ RECOMMENDED ]-->
+    <script src="{% static 'js\bootstrap.min.js' %}"></script>
+
+
+    <!--NiftyJS [ RECOMMENDED ]-->
+    <script src="{% static 'js\nifty.min.js' %}"></script>
+
+
+
+
+    <!--=================================================-->
+    
+    <!--Demo script [ DEMONSTRATION ]-->
+    <script src="{% static 'js\demo\nifty-demo.min.js' %}"></script>
+
+    
+    <!--Bootstrap Wizard [ OPTIONAL ]-->
+    <script src="{% static 'plugins\bootstrap-wizard\jquery.bootstrap.wizard.min.js' %}"></script>
+
+
+    <!--Bootstrap Validator [ OPTIONAL ]-->
+    <script src="{% static 'plugins\bootstrap-validator\bootstrapValidator.min.js' %}"></script>
+
+
+    <!--Form Wizard [ SAMPLE ]-->
+    <script src="{% static 'js\demo\form-wizard.js' %}"></script>
+
+    <script type="text/javascript">
+        let startDate = document.getElementById('startDate')
+        startDate.addEventListener('change',(e)=>{
+          let startDateVal = e.target.value
+          document.getElementById('startDateSelected').innerText = startDateVal
+        })
+    </script>
+
+</body>
+</html>
+
