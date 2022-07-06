@@ -5,6 +5,9 @@ from django.template import Template,Context
 from django.template.loader import get_template
 from django.shortcuts import render
 
+from plotly.offline import plot
+import plotly.graph_objects as go
+
 class Persona(object):
 
     def __init__(self, nombre):
@@ -99,3 +102,103 @@ def calculaEdad(request, agno):
     </html>
     """ %(agno, edadFutura)
     return HttpResponse(doc)
+
+
+def demo_plot_view(request):
+
+    x = [i for i in range (-10, 11)]
+    y1 = [3*i for i in x]
+    y2 = [i**2 for i in x]
+    y3 = [10*abs(i) for i in x]
+
+    graphs = []
+
+    graphs.append(
+        go.Scatter(x=x, y=y1, mode='lines', name='Line y1')
+    )
+
+    graphs.append(
+        go.Scatter(x=x, y=y2, mode='markers', opacity=0.8, 
+                   marker_size=y2, name='Scatter y2')
+    )
+    
+    graphs.append(
+        go.Bar(x=x, y=y3, name='Bar y3')
+    )
+
+    layout = {
+        'title': 'Title of the figure',
+        'xaxis_title': 'X',
+        'yaxis_title': 'Y',
+        'height': 420,
+        'width': 560,
+    }
+
+    plot_div = plot({'data': graphs, 'layout': layout}, output_type='div')
+
+    return render(request, 'demo-plot.html', context={'plot_div': plot_div})
+
+def gauge_view(request):
+
+    #Gauge de Temperatura
+    fig_temp = go.Figure(go.Indicator(
+            domain = {'x': [0, 1], 'y': [0, 1]},
+            value = 24,
+            mode = "gauge+number+delta",
+            title = {'text': "Temperatura (°C)"},
+            delta = {'reference': 22},
+            gauge = {'axis': {'range': [None, 40]},
+                    'steps' : [
+                        {'range': [0, 17], 'color': "beige"},
+                        {'range': [17, 27], 'color': "lime"},
+                        {'range': [27, 40], 'color': "orangered"}]}))
+
+    #Gauge de Precipitación
+    fig_prec = go.Figure(go.Indicator(
+            domain = {'x': [0, 1], 'y': [0, 1]},
+            value = 107,
+            mode = "gauge+number+delta",
+            title = {'text': "Precipitación Acumulada (mm)"},
+            delta = {'reference': 125},
+            gauge = {'axis': {'range': [None, 200]},
+                    'steps' : [
+                        {'range': [0, 100], 'color': "beige"},
+                        {'range': [100, 180], 'color': "lime"},
+                        {'range': [180, 200], 'color': "orangered"}]}))
+ 
+
+    #Gauge de Radiación
+    fig_rad = go.Figure(go.Indicator(
+            domain = {'x': [0, 1], 'y': [0, 1]},
+            value = 1367,
+            mode = "gauge+number+delta",
+            title = {'text': "Radiación (W/m2)"},
+            delta = {'reference': 1300},
+            gauge = {'axis': {'range': [None, 2000]},
+                    'steps' : [
+                        {'range': [0, 1000], 'color': "beige"},
+                        {'range': [1000, 1600], 'color': "lime"},
+                        {'range': [1600, 2000], 'color': "orangered"}]}))
+
+    
+    #Gauge de Humedad Ambiente
+    fig_hum = go.Figure(go.Indicator(
+            domain = {'x': [0, 1], 'y': [0, 1]},
+            value = 1367,
+            mode = "gauge+number+delta",
+            title = {'text': "Radiación (W/m2)"},
+            delta = {'reference': 1300},
+            gauge = {'axis': {'range': [None, 100]},
+                    'steps' : [
+                        {'range': [0, 1000], 'color': "beige"},
+                        {'range': [1000, 1600], 'color': "lime"},
+                        {'range': [1600, 2000], 'color': "orangered"}]}))
+
+    
+    plot_div_temp = plot({'data': fig_temp}, output_type='div')
+    plot_div_prec = plot({'data': fig_prec}, output_type='div')
+    plot_div_rad = plot({'data': fig_rad}, output_type='div')
+
+    cotx={'plot_div_temp': plot_div_temp, 'plot_div_prec': plot_div_prec, 'plot_div_rad': plot_div_rad}
+
+    return render(request, 'gauges_views.html', context=cotx)
