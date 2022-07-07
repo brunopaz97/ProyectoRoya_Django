@@ -55,7 +55,7 @@ ROOT_URLCONF = 'ProyectoRoya.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/Coodinacion_03/Desktop/PAZ/ProyectosDjango/ProyectoRoya/ProyectoRoya/plantillas'],
+        'DIRS': ['C:/Users/Coodinacion_03/Documents/Github/ProyectoRoya_Django/ProyectoRoya/ProyectoRoya/plantillas'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

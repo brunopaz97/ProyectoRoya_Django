@@ -181,19 +181,6 @@ def gauge_view(request):
                         {'range': [1600, 2000], 'color': "orangered"}]}))
 
     
-    #Gauge de Humedad Ambiente
-    fig_hum = go.Figure(go.Indicator(
-            domain = {'x': [0, 1], 'y': [0, 1]},
-            value = 1367,
-            mode = "gauge+number+delta",
-            title = {'text': "Radiación (W/m2)"},
-            delta = {'reference': 1300},
-            gauge = {'axis': {'range': [None, 100]},
-                    'steps' : [
-                        {'range': [0, 1000], 'color': "beige"},
-                        {'range': [1000, 1600], 'color': "lime"},
-                        {'range': [1600, 2000], 'color': "orangered"}]}))
-
     
     plot_div_temp = plot({'data': fig_temp}, output_type='div')
     plot_div_prec = plot({'data': fig_prec}, output_type='div')
