@@ -1,0 +1,6 @@
+venv/
+
+ProyectoRoya/db.sqlite3
+
+ProyectoRoya/apps/evaluation/migrations/000*.py
+ProyectoRoya/apps/evaluation/migrations/00*.py

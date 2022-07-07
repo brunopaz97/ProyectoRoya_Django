@@ -27,8 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-STATICFILES_DIRS=['C:/Users/Coodinacion_03/Desktop/PAZ/ProyectosDjango/ProyectoRoya/ProyectoRoya/plantillas/static/']
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,6 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "apps.evaluation",
+    "plotly"
 ]
 
 MIDDLEWARE = [
