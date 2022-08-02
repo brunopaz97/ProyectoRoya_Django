@@ -15,15 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ProyectoRoya.views import calculaEdad, finish, index, ingresodatos, verfecha, demo_plot_view, gauge_view
+from ProyectoRoya.views import index, ingresodatos, demo_plot_view, gauge_view
+from apps.evaluation.views import ingresardatos
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', index ),
-    path('finish/', finish ),
-    path('fecha/', verfecha),
-    path('edades/<int:agno>', calculaEdad),
-    path('formulario_ingreso_datos/', ingresodatos),
+    path('formulario_ingreso_datos/', ingresardatos),
     path('plotly/', demo_plot_view),
     path('gauges/', gauge_view),
 ]
